@@ -89,3 +89,17 @@ MEPInstant.initializeAsync().then(() => {
     })
 })
 ```
+
+### How to load csv file
+
+ ```javascript
+cc.assetManager.loadRemote(CSV_URL, (err, data: any) => {
+  if (data) {
+      var csvContentString = data._$nativeAsset;
+      //CSV parsing
+      console.log("Done generating csv content file")
+  } else {
+      console.log(`Failed parse data from csv. More details: ${err}`)
+  }
+});
+```
