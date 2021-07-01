@@ -11,7 +11,8 @@
 | 2.5.1 | <ul><li>autoSpecificContent flag added </li> | [Doc](docs_2_5_1/DOCS.md) | [UNPKG](https://unpkg.com/@mep.tech/instant@2.5.1/dist/mepinstant.umd.production.min.js) | [ZIP](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/cocos_extension/mep_instant_2.3.0-alpha8.zip)
 | 2.5.2 | <ul><li> specificContent flag added </li> | [Doc](docs_2_5_2/DOCS.md) | [UNPKG](https://unpkg.com/@mep.tech/instant@2.5.2/dist/mepinstant.umd.production.min.js) | [ZIP](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/cocos_extension/mep_instant_2.3.0-alpha8.zip)
 | 2.6.0 | <ul><li> getSpecificContent function added </li> | [Doc](docs_2_6_0/DOCS.md) | [UNPKG](https://unpkg.com/@mep.tech/instant@2.6.0/dist/mepinstant.umd.production.min.js) | [ZIP](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/cocos_extension/mep_instant_2.6.0.zip)
- | 2.7.0 | <ul><li> Add platform hide loading screen function </li> | [Doc](docs_2_7_0/DOCS.md) | [UNPKG](https://unpkg.com/@mep.tech/instant@2.7.0/dist/mepinstant.umd.production.min.js) | [ZIP](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/cocos_extension/mep_instant_2.7.0.zip)
+| 2.7.0 | <ul><li> Add platform hide loading screen function </li> | [Doc](docs_2_7_0/DOCS.md) | [UNPKG](https://unpkg.com/@mep.tech/instant@2.7.0/dist/mepinstant.umd.production.min.js) | [ZIP](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/cocos_extension/mep_instant_2.7.0.zip)
+| 2.8.1 | <ul><li> feature mepconnect-multibundle </li><li> new mepconnect-specific API </li><li> remove cocos2d local save API for platform safety </li></ul> | [Doc](docs_2_7_0/DOCS.md) | [UNPKG](https://unpkg.com/@mep.tech/instant@2.8.1/dist/mepinstant.umd.production.min.js) | [ZIP](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/cocos_extension/mep_instant_2.8.1.zip)
 
 # How to enable Native-like game
 
@@ -37,7 +38,7 @@
 
 - install [mep_instant’s cocos extension](#prerequisite) in project <br>
 <img src="./resources/install_extension.png" width=70% height=70% >
-- [Bundling project](#prerequisite) <br>
+- Bundling project
 <img src="./resources/bundling_project.png" width=70% height=70% >
 - Export bundle <br>
 <img src="./resources/export_project.png" width=70% height=70% >
@@ -90,16 +91,26 @@ MEPInstant.initializeAsync().then(() => {
 })
 ```
 
-### How to load csv file
+### How to load specific content
 
  ```javascript
-cc.assetManager.loadRemote(CSV_URL, (err, data: any) => {
-  if (data) {
-      var csvContentString = data._$nativeAsset;
-      //CSV parsing
-      console.log("Done generating csv content file")
-  } else {
-      console.log(`Failed parse data from csv. More details: ${err}`)
-  }
-});
+interface SpecificContent {
+  contentUrl: string, //url file 
+  header: string,     //csv_url, sfx_count, zip_url
+  fileType: string    //CSV,SFX,ZIP
+}
+MEPInstant.initializeAsync().then(() => {
+  MEPInstant.startGameAsync().then(gameData => {
+    console.log(JSON.stringify(gameData.SpecificContent));
+    //todo process auto specific content
+    let csvContentURL = '';
+    for (let j = 0; j < gameData.specificContent.length; j++) {
+      if (gameData.specificContent[j].fileType === "CSV") {
+        contentURl = gameData.specificContent[j].contentUrl;
+        //TODO process file CSV reference from docs:
+        //https://github.com/luanvt-amanotes/mep_instant#how-to-load-csv-file
+      }
+    }
+  })
+})
 ```
