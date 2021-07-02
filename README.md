@@ -14,6 +14,8 @@
 | 2.7.0 | <ul><li> Add platform hide loading screen function </li> | [Doc](docs_2_7_0/DOCS.md) | [UNPKG](https://unpkg.com/@mep.tech/instant@2.7.0/dist/mepinstant.umd.production.min.js) | [ZIP](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/cocos_extension/mep_instant_2.7.0.zip)
 | 2.8.1 | <ul><li> feature mepconnect-multibundle </li><li> new mepconnect-specific API </li><li> remove cocos2d local save API for platform safety </li></ul> | [Doc](docs_2_7_0/DOCS.md) | [UNPKG](https://unpkg.com/@mep.tech/instant@2.8.1/dist/mepinstant.umd.production.min.js) | [ZIP](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/cocos_extension/mep_instant_2.8.1.zip)
 
+*MULTIBUNDLE IS IN TESTING*
+
 # How to enable Native-like game
 
 ## Prerequisite
@@ -55,6 +57,9 @@
   - NOTE: only works on google Chrome devtools.
   - NOTE: In case of JS exception, devtools will failed to connect as well. 
 
+## Multi-bundle
+  Please refer to this [file](./resources/MEPCONNECT_MULTIBUNDLE.pdf) on how to configurate Multi-bundle
+  
 ## Samples
 ### Read and filter note
 
