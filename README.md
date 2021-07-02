@@ -106,12 +106,12 @@ interface SpecificContent {
 }
 MEPInstant.initializeAsync().then(() => {
   MEPInstant.startGameAsync().then(gameData => {
-    console.log(JSON.stringify(gameData.SpecificContent));
-    //todo process auto specific content
-    let csvContentURL = '';
+    console.log(JSON.stringify(gameData.specificContent)); //array specific content 
+    
+    //TODO process auto specific content
     for (let j = 0; j < gameData.specificContent.length; j++) {
       if (gameData.specificContent[j].fileType === "CSV") {
-        contentURl = gameData.specificContent[j].contentUrl;
+        let contentURl = gameData.specificContent[j].contentUrl;
         //TODO process file CSV reference from docs:
         //https://github.com/luanvt-amanotes/mep_instant#how-to-load-csv-file
       }
