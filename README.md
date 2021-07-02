@@ -113,7 +113,15 @@ MEPInstant.initializeAsync().then(() => {
       if (gameData.specificContent[j].fileType === "CSV") {
         let contentURl = gameData.specificContent[j].contentUrl;
         //TODO process file CSV reference from docs:
-        //https://github.com/luanvt-amanotes/mep_instant#how-to-load-csv-file
+        cc.assetManager.loadRemote(contentURL, (err, data: any) => {
+          if (data) {
+              var csvContentString = data._$nativeAsset;
+              //CSV parsing
+              console.log("Done generating csv content file")
+          } else {
+              console.log(`Failed parse data from csv. More details: ${err}`)
+          }
+        });
       }
     }
   })
