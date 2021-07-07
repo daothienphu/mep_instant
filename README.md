@@ -56,9 +56,6 @@
 - [Debug with google chrome devtools](https://docs.cocos.com/creator/manual/en/publish/debug-jsb.html)
   - NOTE: only works on google Chrome devtools.
   - NOTE: In case of JS exception, devtools will failed to connect as well. 
-
-## Multi-bundle
-  Please refer to this [file](./resources/MEPCONNECT_MULTIBUNDLE.pdf) on how to configurate Multi-bundle
   
 ## Samples
 ### Read and filter note
@@ -129,6 +126,7 @@ MEPInstant.initializeAsync().then(() => {
 ```
 
 ### How to load bundle
+Please refer to this [file](./resources/MEPCONNECT_MULTIBUNDLE.pdf) on how to configurate Multi-bundle
 <img src="./resources/load_bundle.jpg"> </img>
  ```javascript
 let bundleName = 'magictileExtends'
