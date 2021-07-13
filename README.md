@@ -151,3 +151,41 @@ cc.assetManager.loadBundle(bundleName, (err:Error, bundle: cc.AssetManager.Bundl
   });
 }
 ```
+
+# ZIP Loader
+| Version | Changelog | Link |
+| ----------- | ----------- | ----------- |
+| 0.10.3 | --- | [UMD](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/addon/unzipper-0.10.3.umd.min.js)/[EMBED](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/addon/unzipper-0.10.3.assign.min.js)
+- EMBED: Use EMBED js package as a game source file (deselect cocos setting "Import As Plugin")
+- UMD: use [loadScript](https://docs.cocos.com/creator/api/en/classes/AssetManager.html#loadscript) to load JS package
+
+### --------- NOTE: THIS PACKAGE IS STILL IN PREVIEW ---------
+This package based on [JSZip](https://github.com/Stuk/jszip) with modifcations to let developers to load cocos resource from zip file.
+So, please check JSZip document on how to load and parse zip content.
+But below is sample on how to load MP3 file from sfx zip package.
+
+ ```javascript
+loadZip()
+{
+    const request = new XMLHttpRequest()
+    request.open("GET", 'https://mepofficial.s3.amazonaws.com/game_sfx_test/sfx.zip', true)
+    request.responseType = "arraybuffer";
+    request.onload = ()=>{
+        if ( request.status === 200 || request.status === 0 ) {
+            Unzipper.loadAsync(request.response).then(this.onLoadZipSFX.bind(this));
+        }
+    }
+    request.send();
+}
+
+onLoadZipSFX(zip)
+{
+    var f = zip.file("sfx/1.mp3")
+    f.asyncAudioClip()
+    .then(audioClip => {
+        this.getComponent(cc.AudioSource).clip = audioClip;
+    })
+}
+```
+
+
