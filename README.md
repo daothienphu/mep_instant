@@ -155,7 +155,7 @@ cc.assetManager.loadBundle(bundleName, (err:Error, bundle: cc.AssetManager.Bundl
 # ZIP Loader
 | Version | Changelog | Link |
 | ----------- | ----------- | ----------- |
-| 0.10.3 | --- | [UMD](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/addon/unzipper-0.10.3.umd.min.js)/[EMBED](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/addon/unzipper-0.10.3.assign.min.js)
+| 0.10.4 | --- | [UMD](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/addon/unzipper-0.10.4.umd.min.js)/[EMBED](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/addon/unzipper-0.10.4.assign.min.js)
 - EMBED: Use EMBED js package as a game source file (deselect cocos setting "Import As Plugin")
 - UMD: use [loadScript](https://docs.cocos.com/creator/api/en/classes/AssetManager.html#loadscript) to load JS package
 
