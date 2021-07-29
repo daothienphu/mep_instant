@@ -13,6 +13,7 @@
 | 2.6.0 | <ul><li> getSpecificContent function added </li> | [Doc](docs_2_6_0/DOCS.md) | [UNPKG](https://unpkg.com/@mep.tech/instant@2.6.0/dist/mepinstant.umd.production.min.js) | [ZIP](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/cocos_extension/mep_instant_2.6.0.zip)
 | 2.7.0 | <ul><li> Add platform hide loading screen function </li> | [Doc](docs_2_7_0/DOCS.md) | [UNPKG](https://unpkg.com/@mep.tech/instant@2.7.0/dist/mepinstant.umd.production.min.js) | [ZIP](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/cocos_extension/mep_instant_2.7.0.zip)
 | 2.8.2 | <ul><li> feature mepconnect-multibundle </li><li> new mepconnect-specific API </li><li> remove cocos2d local save API for platform safety </li></ul> | [Doc](docs_2_8_2/DOCS.md) | [UNPKG](https://unpkg.com/@mep.tech/instant@2.8.2/dist/mepinstant.umd.production.min.js) | [ZIP](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/cocos_extension/mep_instant_2.8.2.zip)
+| 2.8.3 | <ul><li> Change STAG to BE STAG </li><li> PRD uses PRD BE version 2 </li></ul> | [Doc](docs_2_8_2/DOCS.md) | [UNPKG](https://unpkg.com/@mep.tech/instant@2.8.3/dist/mepinstant.umd.production.min.js) | [ZIP](https://d1wkdokb986dq4.cloudfront.net/mep-instant-sdk/cocos_extension/mep_instant_2.8.2.zip)
 
 *MULTIBUNDLE IS IN TESTING*
 
