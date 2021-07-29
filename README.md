@@ -164,7 +164,7 @@ This package based on [JSZip](https://github.com/Stuk/jszip) with modifcations t
 So, please check JSZip document on how to load and parse zip content.
 But below is sample on how to load MP3 file from sfx zip package.
 
- ```javascript
+```javascript
 loadZip()
 {
     const request = new XMLHttpRequest()
@@ -188,4 +188,28 @@ onLoadZipSFX(zip)
 }
 ```
 
+### How to use local game save from mepinstant 2.8.3
+```javascript
+var data = {
+  loading: true,
+  c184334d-81ed-4608-8471-7d42024a22d1: {
+    songId:"c184334d-81ed-4608-8471-7d42024a22d1"
+    score: 100,
+    star: 3,
+    crown: 1 
+  }
+}
 
+MEPInstant.setGameDataAsync(data).then(() => {
+ console.log("setGameDataAsync is sucessfully")
+}).catch({err=>{
+  console.error(err.message)
+})
+
+MEPInstant.getGameDataAsync().then((data:Object) => {
+  console.log(data) // print object
+  if(data && typeof data.loading !== 'undefined') {
+    console.log(data.loading) // true
+  }
+});
+```
